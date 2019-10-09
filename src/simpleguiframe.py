@@ -1,5 +1,6 @@
 import wx
 from simpleguipanel import *
+from simpleguimenu import * 
 
 class SimpleGuiFrame(wx.Frame):
     def __init__(self, *args, **kw):
@@ -13,19 +14,7 @@ class SimpleGuiFrame(wx.Frame):
         self._addMenubar()
 
     def _addMenubar(self):
-        menubar = wx.MenuBar()
-        fileMenu = wx.Menu()
-        fileItem = fileMenu.Append(wx.ID_EXIT, 'Quit', 'Quit App')
-        self.Bind(wx.EVT_MENU, self.OnQuit, fileItem)
-        menubar.Append(fileMenu, '&File')
-
-        helpMenu = wx.Menu()
-        aboutItemId = wx.NewId()
-        aboutItem = helpMenu.Append(aboutItemId, 'About', 'About')
-        self.Bind(wx.EVT_MENU, self.OnAbout, aboutItem)
-        menubar.Append(helpMenu, '&Help')
-
-        self.SetMenuBar(menubar)
+        self.menu = SimpleGuiMenu(self)
 
     def OnQuit(self, event):
         self.Close()

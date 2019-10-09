@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['simplegui.py'],
-             pathex=['C:\\github\\simplegui\\src'],
+             pathex=['D:\\Github\\simplegui\\src'],
              binaries=[],
              datas=[],
              hiddenimports=[],
