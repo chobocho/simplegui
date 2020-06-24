@@ -1,7 +1,7 @@
 import wx
-from simpleguiframe import *
+from ui.simpleguiframe import *
+from build.info import *
 
-SW_TITLE = "SIMPLE GUI"
 WINDOW_SIZE = 480
 
 def main(): 

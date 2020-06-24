@@ -1,6 +1,6 @@
 import wx
-from simpleguipanel import *
-from simpleguimenu import * 
+from ui.simpleguipanel import *
+from ui.simpleguimenu import * 
 
 class SimpleGuiFrame(wx.Frame):
     def __init__(self, *args, **kw):

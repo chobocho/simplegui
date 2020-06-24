@@ -1,5 +1,5 @@
 import wx
-from filedrop import *
+from ui.filedrop import *
 
 WINDOW_SIZE = 480
 
@@ -26,6 +26,16 @@ class SimpleGuiPanel(wx.Panel):
         clearBtn.Bind(wx.EVT_BUTTON, self.OnClearBtn)
         btnBox.Add(clearBtn, 1, wx.ALIGN_CENTRE|wx.ALL, 5)
 
+        copyBtnId = wx.NewId()
+        copyBtn = wx.Button(self, copyBtnId, "Copy", size=(50,30))
+        copyBtn.Bind(wx.EVT_BUTTON, self.OnCopyBtn)
+        btnBox.Add(copyBtn, 1, wx.ALIGN_CENTRE|wx.ALL, 5)
+
+        runBtnId = wx.NewId()
+        runBtn = wx.Button(self, runBtnId, "Run", size=(50,30))
+        runBtn.Bind(wx.EVT_BUTTON, self.OnRunBtn)
+        btnBox.Add(runBtn, 1, wx.ALIGN_CENTRE|wx.ALL, 5)
+
         sizer.Add(btnBox, 0, wx.ALIGN_CENTER_VERTICAL, 5)
         self.SetSizer(sizer)
 
@@ -40,3 +50,16 @@ class SimpleGuiPanel(wx.Panel):
 
     def OnClearBtn(self, event):
         self.text.SetValue("")
+        
+    def OnCopyBtn(self, event):
+        toCopyData = self.text.GetValue()
+        
+        if len(toCopyData) == 0:
+            return 
+            
+        if wx.TheClipboard.Open():
+            wx.TheClipboard.SetData(wx.TextDataObject(toCopyData))
+            wx.TheClipboard.Close()
+
+    def OnRunBtn(self, event):
+        pass

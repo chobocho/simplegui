@@ -2,3 +2,4 @@
 /src/build
 /src/dist
 /src/simplegui.spec
+/src/ui/__pycache__
