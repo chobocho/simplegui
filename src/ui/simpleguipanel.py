@@ -36,7 +36,7 @@ class SimpleGuiPanel(wx.Panel):
         runBtn.Bind(wx.EVT_BUTTON, self.OnRunBtn)
         btnBox.Add(runBtn, 1, wx.ALIGN_CENTRE|wx.ALL, 5)
 
-        sizer.Add(btnBox, 0, wx.ALIGN_CENTER_VERTICAL, 5)
+        sizer.Add(btnBox, 0, wx.ALIGN_CENTRE, 5)
         self.SetSizer(sizer)
 
     def OnCallback(self, filelist):
