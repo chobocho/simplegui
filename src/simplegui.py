@@ -1,4 +1,3 @@
-import wx
 from ui.simpleguiframe import *
 from build.info import *
 
